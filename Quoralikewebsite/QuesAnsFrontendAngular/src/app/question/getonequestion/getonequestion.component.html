@@ -1,0 +1,16 @@
+
+<div *ngFor="let q of questions">
+    <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+        <div class="container">
+            <h6>{{q.questionText}}</h6>
+            <a routerLink="{{q.questionId}}"><button class="btn btn-danger col-2" >Delete</button></a>
+         <hr>
+        </div>
+        <div *ngFor="let a of q.answers">
+            <div class="container">
+                <span>{{a.answerText}}</span><br>
+                <span style="font-size: x-small;">By {{a.userEmail}}</span>
+            </div>
+        </div>
+     </div>
+</div>

@@ -1,0 +1,16 @@
+<div *ngFor="let answer of answerList">
+    <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+        <div class="container">
+            <span>Your Answer:</span><h4>{{answer.answerText}}</h4><hr>
+            <div *ngFor="let question of questionList">
+                <div *ngIf="answer.questionId == question.questionId">
+                <span>For Question:{{question.questionText}}</span><br>
+                <span style="font-size: x-small;">Posted By {{question.userEmail}}</span>  
+               </div>
+            </div>
+                <a routerLink="/deleteanswer/{{answer.answerId}}"><button class="btn btn-danger col-2">Delete</button></a>&nbsp;
+                <a routerLink="/updateanswer/{{answer.answerId}}"><button class="btn btn-primary col-2">Update</button></a>
+        </div>
+    </div>
+</div>
+

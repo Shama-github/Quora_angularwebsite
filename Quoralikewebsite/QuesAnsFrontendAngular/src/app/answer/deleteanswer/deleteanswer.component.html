@@ -1,0 +1,13 @@
+
+<div *ngIf="answer">
+        <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+                <h3>Sure,Want to delete this answer!</h3>
+            <div class="container">
+                <h6>{{answer.answerText}}</h6>
+                <span style="font-size:x-small;">Posted By {{answer.userEmail}}</span>
+                <br>
+                <button class=" btn btn-danger" type="button" (click)="onDelete()"> Delete </button>   
+        </div>
+    </div> 
+</div>
+    

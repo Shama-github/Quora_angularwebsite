@@ -1,0 +1,20 @@
+   <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+<h2>Update this answer</h2>
+<div style="margin-left: 6%;">
+<form [formGroup]="answerrform" (ngSubmit)="onSubmit(answerrform.value)">
+ <div id=hide>
+     <input class="form-control mb-3 rounded-50"type="textarea" placeholder="QuestionId" name="questionId" formControlName="questionId"  >
+     <span style="color: red;" *ngIf="answerrform.controls.questionId.errors">Please fill this feild</span>
+<br>
+     <input class="form-control mb-3 rounded-50" type="textarea" placeholder="Mention Email" name="userEmail" formControlName="userEmail"   >
+     <span style="color: red;" *ngIf="answerrform.controls.userEmail.errors">Please fill this feild</span>
+<br>
+</div>
+      <input class="form-control mb-3 rounded-50" type="textarea" placeholder="Update your answer" name="answerText" formControlName="answerText"  >
+     <span style="color: red;" *ngIf="answerrform.controls.answerText.errors">Please fill this feild</span>
+<br>
+ <input class="btn btn-primary col-2" type="submit" [disabled]="answerrform.invalid">
+  </form>
+</div>
+</div>
+

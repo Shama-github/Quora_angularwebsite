@@ -1,0 +1,14 @@
+<div class="bg-white col-12 shadow p-3 mb-5 rounded">
+<h3>Sure,Want to Delete This Question!!!</h3>
+<div *ngIf="question">
+<div class="container">
+    <h6>{{question.questionText}}</h6>
+    <span style="font-size:x-small;">Posted By {{question.userEmail}}</span><hr>
+    <div *ngFor="let a of question.answers">
+    <p>{{a.answerText}}</p> 
+    <span style="font-size:x-small;">Posted By {{a.userEmail}}</span><hr>
+    </div>
+</div>
+</div>&nbsp;
+<button class="btn btn-danger col-2" type="button" (click)="onDelete()"> Delete</button>
+</div>

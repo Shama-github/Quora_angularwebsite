@@ -1,0 +1,10 @@
+<div class="bg-white col-12 shadow p-3 mb-5 rounded">
+ <h1>logout</h1>
+    <hr>
+    <div *ngIf="user">
+        Sure Want to Logout as User <h2>{{user.userName}}<br><span style="font-size: x-small;">with Email:&nbsp;{{user.userEmail}}</span></h2>   
+        <br/>
+        <button class="col-2 btn btn-primary" (click)="logout()">Logout</button>
+        <br>
+    </div>
+</div>

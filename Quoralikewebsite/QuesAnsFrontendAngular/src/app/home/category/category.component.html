@@ -1,0 +1,24 @@
+  <div *ngFor="let q of questions">
+        <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+            <div class="container">
+                <h6>{{q.questionText}}</h6>
+                <span style="font-size:x-small;">Posted By {{q.userEmail}}</span><hr>
+            </div>
+            <div id="answer" class="container">
+                    <div class="row">
+                        <div class="col-10">
+                            <input type="text" class="form-control mb-3 rounded-50" name="replytext" #myInput placeholder="Write Your Answer Here">
+                        </div>
+                        <div class="col-2">
+                            <button type="submit" (click)="submitAnswer(q.questionId, myInput.value)" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+            </div>
+            <div *ngFor="let a of q.answers">
+                <div class="container">
+                    <span>{{a.answerText}}</span><br>
+                    <span style="font-size: x-small;">By {{a.userEmail}}</span>
+                </div>
+            </div>
+        </div>
+    </div>

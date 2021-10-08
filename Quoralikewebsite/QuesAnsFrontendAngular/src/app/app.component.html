@@ -1,0 +1,71 @@
+
+<div class="row">
+  <div class="col-6">
+    <h3 style="padding:10px 10px 10px 10px;text-align:left">Welcome to Quora!!</h3>
+  </div>
+  <div class="col-6">
+    <div style="padding:10px 10px 10px 10px;text-align:right">
+        <div class="col-6"  id="loginList">
+                <a class="col-6 btn btn-primary mr-2"  routerLink="Login" routerLinkActive="active">Login</a>&nbsp;&nbsp;
+                <a class="col-6 btn btn-primary mr-2" routerLink='Register' routerLinkActive='active'>Sign Up</a>&nbsp;&nbsp;
+      </div>
+      <div class="col-6" id="logoutList">
+             <p class="col-2"></p> 
+              Hello!&nbsp;<span id="username" class="col-2 mr-2" style="text-align:center;"></span>
+              <p class="col-2"></p>
+              <a class="col-4 btn btn-primary mr-2"  routerLink="logout" routerLinkActive="active">Logout</a>&nbsp;&nbsp;
+      </div>    
+    </div>
+  </div>
+</div>
+
+<div class=" row bg-white col-12 shadow p-3 mb-5 rounded">
+  <div class="col-5">
+       <div>
+         <div class="row">
+          <div class="col-4"><p>Global Feed:</p><a  routerLink="Home"><button class="col-10 btn btn-primary">Home</button></a>
+          </div>
+          <div class="col-8"><p>Your Feed:</p>
+         <a  routerLink="myquestions"><button class="col-6 btn btn-primary">Your Questions</button></a>&nbsp;
+         <a  routerLink="myanswers"><button class="col- btn btn-primary">Your Answers</button></a>
+        </div>
+        </div>
+      </div>
+  </div> 
+  <div class="col-4">
+      <div class="row">
+          <div class="col-7">
+              <input type="text" class="form-control mb-3 rounded-50" name="category" #myInput placeholder="Give Question Category">
+          </div>
+          <div class="col-3">
+           <button type="submit" (click)="setcategory(myInput.value)" class="btn btn-primary">Search</button>
+           </div>
+    </div>
+  </div>
+  <div class="col-3">
+      <a  routerLink="AddQuestion"><button class="col-10 btn btn-primary" >+ Add a new question</button></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-6"><router-outlet></router-outlet></div>
+  <div class="col-4">
+    <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+     <h3>Popular Topics:</h3><hr>
+          <ul>
+            <li>Java</li>
+            <li>C#</li>
+            <li>Python</li>
+            <li>Big Data</li>
+            <li>Angular</li>
+          </ul><hr>
+    </div>
+    <div class="bg-white col-12 shadow p-3 mb-5 rounded">
+     <h3>Popular Users:</h3><hr>
+       <div *ngFor="let u of users">
+          <ul><li>Name: {{u.userName}}<br>Email: {{u.userEmail}}</li></ul><hr>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
